@@ -137,7 +137,7 @@ public class StaminaManager : MonoBehaviour
     
 
 
-    public void StaminaFulle(GoogleMobileAds.Api.Reward odul)  // fail alininca tekrar baslarken calisiyor, reklam izlendiyse
+    public void StaminaFulle()  // fail alininca tekrar baslarken calisiyor, reklam izlendiyse
     {
         _stamiaBar.color = Color.green;
 

@@ -18,7 +18,7 @@ public class SDKManager : MonoBehaviour
     {
         if (ReklamScript.RewardedReklamHazirMi() == true)
         {
-            ReklamScript.RewardedReklamGoster(GameObject.FindObjectOfType<StaminaManager>().StaminaFulle);
+            ReklamScript.RewardedReklamGoster(StaminaFulle);
         }
     }
 
@@ -36,7 +36,7 @@ public class SDKManager : MonoBehaviour
     {
         if (ReklamScript.RewardedReklamHazirMi() == true)
         {
-            ReklamScript.RewardedReklamGoster(GameObject.FindObjectOfType<UpgradeManager>().BolumSonuParaArtir);
+            ReklamScript.RewardedReklamGoster(KatlamaOdullu);
         }
         
     }
@@ -47,14 +47,24 @@ public class SDKManager : MonoBehaviour
 
         if (ReklamScript.RewardedReklamHazirMi() == true)
         {
-            gm.TekrarOynamaHakkiAl();
-            ReklamScript.RewardedReklamGoster(BosOdulluReklam);
+           
+            ReklamScript.RewardedReklamGoster(DevamOdulluReklam);
         }
 
     }
 
-    void BosOdulluReklam(GoogleMobileAds.Api.Reward odul)
+    void DevamOdulluReklam(GoogleMobileAds.Api.Reward odul)
     {
+        gm.TekrarOynamaHakkiAl();
+    }
 
+    void StaminaFulle(GoogleMobileAds.Api.Reward odul)
+    {
+        GameObject.FindObjectOfType<StaminaManager>().StaminaFulle();
+    }
+
+    void KatlamaOdullu(GoogleMobileAds.Api.Reward odul)
+    {
+        GameObject.FindObjectOfType<UpgradeManager>().BolumSonuParaArtir();
     }
 }

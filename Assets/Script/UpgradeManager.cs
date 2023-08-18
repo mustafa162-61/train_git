@@ -598,7 +598,7 @@ public class UpgradeManager : MonoBehaviour
     }
 
 
-    public void BolumSonuParaArtir(GoogleMobileAds.Api.Reward odul)  
+    public void BolumSonuParaArtir()  
     {
         int para = _bolumSonuOdul * 5;
 
