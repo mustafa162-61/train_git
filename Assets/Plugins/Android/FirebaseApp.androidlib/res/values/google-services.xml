@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
+  <string name="gcm_defaultSenderId" translatable="false">368608426174</string>
+  <string name="google_storage_bucket" translatable="false">railroad-master-dd0b1.appspot.com</string>
+  <string name="project_id" translatable="false">railroad-master-dd0b1</string>
+  <string name="google_api_key" translatable="false">AIzaSyDxoZZajBa_-Kr1vduoqtUzs1rzBWBvrXg</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDxoZZajBa_-Kr1vduoqtUzs1rzBWBvrXg</string>
+  <string name="google_app_id" translatable="false">1:368608426174:android:8f10198c4a6419595746ef</string>
+  <string name="default_web_client_id" translatable="false">368608426174-igdcin492s2omro4ps22kkjogp63svrm.apps.googleusercontent.com</string>
+</resources>
