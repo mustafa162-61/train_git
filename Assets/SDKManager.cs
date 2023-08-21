@@ -5,23 +5,13 @@ using UnityEngine;
 public class SDKManager : MonoBehaviour
 {
 
-    GameManager gm;
-
-
-    private void Start()
-    {
-        gm = GameObject.FindObjectOfType<GameManager>();
-    }
-
-
     public void FullStaminaReklamBTN()
     {
         if (ReklamScript.RewardedReklamHazirMi() == true)
         {
-            ReklamScript.RewardedReklamGoster(StaminaFulle);
+            ReklamScript.RewardedReklamGoster(StaminaFulle);  
         }
     }
-
 
     public void GecisReklamiGoster()
     {
@@ -36,26 +26,24 @@ public class SDKManager : MonoBehaviour
     {
         if (ReklamScript.RewardedReklamHazirMi() == true)
         {
-            ReklamScript.RewardedReklamGoster(KatlamaOdullu);
-        }
-        
+            ReklamScript.RewardedReklamGoster(KatlamaOdullu); 
+        }  
     }
 
 
     public void FailDevamEtmeReklamiGoster()
     {
-
         if (ReklamScript.RewardedReklamHazirMi() == true)
         {
-           
             ReklamScript.RewardedReklamGoster(DevamOdulluReklam);
         }
-
     }
 
     void DevamOdulluReklam(GoogleMobileAds.Api.Reward odul)
     {
-        gm.TekrarOynamaHakkiAl();
+        GameObject.FindObjectOfType<GameManager>().TekrarOynamaHakkiAl();
+        GameObject.FindObjectOfType<StaminaManager>().StaminaFulle();
+        GameObject.FindObjectOfType<UpgradeManager>().MateryaliFulle();
     }
 
     void StaminaFulle(GoogleMobileAds.Api.Reward odul)

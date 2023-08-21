@@ -93,9 +93,6 @@ public class TrainMove : MonoBehaviour
                 _maxSpeed = 50f;
 
             }
-
-        
-
     }
 
     public float GetMaxSpeed()
@@ -326,35 +323,10 @@ public class TrainMove : MonoBehaviour
 
             _gm.UpgradeBTN_DOWN();
 
-
-            /*
-
-            Tutorial tuto = GameObject.FindObjectOfType<Tutorial>();
-
-            if (tuto != null)
-            {
-                GameObject.FindObjectOfType<Tutorial>().TaptoPlay_Release_Close();
-            }
-           */
-
-            /*
-            if (_gm._isGameStart == false)  // oyun baþladýðýnda bir kez çalýþtýrýyoruz
-            {
-                OyunuBaslat();
-            }
-            */
-
-
-            // }
         }
         else
         {
-
-            //   _gm.UpgradeBTN_UP();
-           // _paraOlustur = false;
             MoveChange(false);
-
-
 
         }
 
@@ -384,8 +356,6 @@ public class TrainMove : MonoBehaviour
             TrenSesiniYavaslat();
 
             MoveChange(false);
-
-            // _tr.Translate(_tr.forward * _currentSpeed * Time.deltaTime, Space.World);
 
             _tr.position += new Vector3(0, 0, _currentSpeed * Time.deltaTime);
 

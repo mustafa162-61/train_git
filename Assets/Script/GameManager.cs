@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [HideInInspector]
+    //[HideInInspector]
     public bool _isGameStart,_isEndGame;
 
     [SerializeField]
@@ -138,21 +138,22 @@ public class GameManager : MonoBehaviour
 
     public void TekrarOynamaHakkiAl()  // faildeki odullu reklam izlenirse calisiyor
     {
-      
         
         SesControl.instance.TrenSes(true);
 
         _isGameStart = true;
         _isEndGame = false;
 
-       // failPNL.SetActive(false);
+        failPNL.SetActive(false);
 
-        GameObject.Find("FailPNL").SetActive(false);
+      //  GameObject.Find("FailPNL").SetActive(false);
+
+     
         
     }
 
 
- 
+
 
     IEnumerator GecikmeliTitret()
     {

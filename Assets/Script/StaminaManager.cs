@@ -44,6 +44,8 @@ public class StaminaManager : MonoBehaviour
     }
 
     // Update is called once per frame
+
+    bool staminaFulleniyor = false;
    
       private void Update()
       {
@@ -51,6 +53,10 @@ public class StaminaManager : MonoBehaviour
          {
             if (Input.GetMouseButton(0))
             {
+                if (staminaFulleniyor == true)
+                {
+                    return;
+                }
 
                 if (staminaDegeriAlindiMi == false)
                 {
@@ -69,7 +75,7 @@ public class StaminaManager : MonoBehaviour
                 if (_stamiaBar.fillAmount <= 0.5f && _stamiaBar.fillAmount > 0.2f)
                 {
 
-                    BarRenkDegisimi(Color.yellow);
+                   // BarRenkDegisimi(Color.yellow);
 
                     if (_stamiaBar.fillAmount <= .3f)
                     {
@@ -81,41 +87,11 @@ public class StaminaManager : MonoBehaviour
 
                 }else if (_stamiaBar.fillAmount <= 0.2f)
                 {
-                    BarRenkDegisimi(Color.red);
+                   // BarRenkDegisimi(Color.red);
 
                 }
-              
 
-
-                /*
-                if (barAnim.GetBool("fadeBar") == true)
-                {
-                    barAnim.SetBool("fadeBar", false);
-                }
-               */
-
-            } /*
-            else
-            {
-                _stamiaBar.fillAmount += (0.16f * Time.deltaTime);  // 10 saniyede bari dolduruyoruz
-
-                if (_stamiaBar.fillAmount >= 1f)
-                {
-                    if (barAnim.GetBool("fadeBar") == true)
-                    {
-                        barAnim.SetBool("fadeBar", false);
-                    }
-                }
-                else
-                {
-                    if (barAnim.GetBool("fadeBar") == false)
-                    {
-                        barAnim.SetBool("fadeBar", true);
-                    }
-                  
-                } 
             }
-            */
 
             if (_stamiaBar.fillAmount > 0f)
             {
@@ -134,25 +110,25 @@ public class StaminaManager : MonoBehaviour
 
          }
       }
-    
+
 
 
     public void StaminaFulle()  // fail alininca tekrar baslarken calisiyor, reklam izlendiyse
     {
-        _stamiaBar.color = Color.green;
+
+        staminaFulleniyor = true;
 
         _barAmount = _upManager._staminaCurrent;
         _stamiaBar.fillAmount = (_barAmount / _upManager._staminaCurrent);
 
-       
-
         notStaminaInfo.SetActive(false);
 
-        if (staminaFullReklamBTN.localScale.x != 0f)
-        {
-            staminaFullReklamBTN.DOScale(0f, 0f);
-        }
-        
+        _stamiaBar.color = Color.green;
+
+        staminaFullReklamBTN.DOScale(0f, 0f);
+
+        staminaFulleniyor = false;
+
     }
 
 
